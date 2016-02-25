@@ -4,11 +4,10 @@
 // attributes 'name' and 'email'.  It gives back a string. For example,
 // showPerson({'name': 'Daniel Bergey', 'email': 'dbergey@friendscentral.org'})
 // returns "Daniel Bergey <dbergey@friendscentral.org>"
-    var showPerson = function(p) { return p.name+' <'+ p.email+'>'}
 // Write `showDate`.
 // Input: {year: 1970, month: 01, day:01, hour: 0, minute: 0, second: 0}
 // Output: "1970-01-31T12:59:59" Note the T between date and time
-  
+ var showPerson = function(p) { return p.name+' <'+ p.email+'>'}
     
 var showDate = function(o) { 
 if (o.year < 10) {
@@ -160,6 +159,18 @@ var compareDates = function (d,z) {
 // Input: a String and a list of Strings
 // Output: true or false (lowercase - these are JS keywords)
 // return true if the first input is present in the list (second input)
+ var elementOf = function(d, z) {
+    var count = 0;
+    while (count < z.length) {
+    if (d == z[count]) {
+    return true;
+    } 
+      count++;
+         } if (count == z.length) {
+         return false;
+         }   
+};
+
 
 
 
@@ -170,6 +181,24 @@ var compareDates = function (d,z) {
 // sender, recipients, subject, date, body, tags
 // Output: true or false
 // return true if the first input is present in the tags of the email
+var hasTag = function(checkedString, checkedEmail) {
+    var contain = false;
+    var count = 0;
+    while (count < checkedEmail.tags.length) {
+        if (checkedString == checkedEmail.tags[count]) {
+            contain = true;
+        }
+        count++;
+    }
+    return contain;
+};
+
+ 
+    
+    
+    
+
+
 
 // filterByTag
 // Input: a String and a list of Emails
